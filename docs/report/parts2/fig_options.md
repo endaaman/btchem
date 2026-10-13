@@ -193,7 +193,7 @@ Figure 5（概念図）の中身は、別章「仮説の経路オプション」
 
 ## 現状（v1）
 
-![Figure 5 修正版（v1、`out/v1/design/fig5_revised.png`）](v1/design/fig5_revised.png){width=85%}
+![Figure 5 修正版（v1、`design/fig5_revised.png`）](v1/design/fig5_revised.png){width=85%}
 
 v1 の修正版は 2nd hit を **RANKL/OPG 比 ↑（OPG ↓、ステロイド）、炎症因子 ↑（ステロイド）、骨形成 ↓（化療）** としていました。
 **このうち RANKL/OPG と炎症の 2 項目は DEX（v1 の 4C）が根拠**です。DEX を Supplementary に下げると、2nd hit の本編の根拠は「骨形成 ↓」だけになります。
