@@ -8,3 +8,6 @@
 - 戦略・データセット評価は `,docs/strategy_20261012.md`。解析メモは `docs/`。
 - 清水の指示（`data/2本目MEDCOMM_遠田作業依頼資料20260930.docx`）に従う。解析は unbiased に回し、出なかった結果もそのまま書く。
 - 清水の依頼資料にある BioRender のアカウント情報は転記しない。
+- 出力の世代管理: 一区切りごとに `out/{fig,design,report}` を `out/vN/` にコピーして保存し、同じ名前の git tag（`vN`）を打つ。
+  `git checkout vN` して `fig/all.sh`・`design/render.sh`・`docs/report/build.sh` を回せば `out/vN` を再現できる。
+  `data/` はそのまま置いておく（git 外、上書きしない）。fig と report は必ずセットで撮る。v1 = 2026-10-12 の第一波。
