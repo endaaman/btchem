@@ -1,4 +1,4 @@
-"""MedComm 共通スタイル（prelim/common.py のコピー。出力先のみ out/fig）。
+"""MedComm 共通スタイル（prelim/common.py のコピー。出力先は out/<OUT_VER>/fig）。
 
 投稿規定:
 - 図の幅 170 mm (1 段組なら 80 mm)、高さ 210 mm 以内
@@ -11,7 +11,8 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 
-OUT_DIR = 'out/fig'
+OUT_VER = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'OUT_VER')).read().strip()
+OUT_DIR = f'out/{OUT_VER}/fig'  # 出力世代は repo 直下の OUT_VER で指定
 FULL_WIDTH_MM = 170
 HALF_WIDTH_MM = 80
 MAX_HEIGHT_MM = 210
