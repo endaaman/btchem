@@ -245,7 +245,31 @@ def main():
     PGT.to_csv(D / 'panel_genes.csv', index=False)
     print(PGT[['gene', 'lfc_Age_1y', 'padj_Age_1y', 'lfc_Age_2y', 'padj_Age_2y', 'lfc_Age_2.5y', 'padj_Age_2.5y',
                'late_2.5y_vs_1y_lfc', 'late_2.5y_vs_1y_z']].round(3).to_string(index=False))
+    concordance_aging2(res)
     plot(AX, CA)
+
+
+def concordance_aging2(res):
+    """案2（別担当 prelim/aging2、GSE235942 脛骨 22 vs 6 か月）の NES と、Kaya の各比較の NES の Spearman。
+    同じ chemo2 collection（72 set）で回してあるので term で突き合わせる。aging2 の出力は読むだけ（無ければ飛ばす）。"""
+    from scipy.stats import spearmanr
+    src = ROOT / 'out/prelim/aging2/gsea'
+    labs = {'G235_M_age': 'male 22 vs 6 mo', 'G235_M_age_comp': 'male, composition-adjusted', 'G235_F_age': 'female 22 vs 6 mo'}
+    if not all((src / f'{k}.csv').exists() for k in labs):
+        print('aging2 GSEA not found; skip concordance')
+        return
+    A = {k: pd.read_csv(src / f'{k}.csv').set_index('Term')['NES'].astype(float) for k in labs}
+    rows = []
+    for lb, r in res.items():
+        row = dict(kaya=lb)
+        for k, v in A.items():
+            t = r.index.intersection(v.index)
+            row[f'rho_{k}'] = spearmanr(r.loc[t, 'NES'].astype(float), v[t])[0]
+            row['n_sets'] = len(t)
+        rows.append(row)
+    C = pd.DataFrame(rows)
+    C.to_csv(D / 'concordance_aging2.csv', index=False)
+    print(C.round(2).to_string(index=False))
 
 
 def plot(AX, CA):
