@@ -9,8 +9,14 @@ out="out/$ver/design"
 mkdir -p "$out"
 names=("$@")
 [ ${#names[@]} -eq 0 ] && names=(fig1 fig5_revised fig5_shimizu ga)
+# 出力はフォルダ指定で一時ディレクトリに出してから移す。Arch の drawio-desktop は `electron app.asar "$@"` で起動するため
+# app.asar も入力に数えられ、-o にファイル名を渡すと "output must be a folder when exporting multiple files" で落ちる。
+tmp=$(mktemp -d)
+trap 'rm -rf "$tmp"' EXIT
 for n in "${names[@]}"; do
-  drawio --no-sandbox --disable-gpu -x -f png -s 4 -b 20 -o "$out/$n.png" "design/$n.drawio" 2>/dev/null
-  drawio --no-sandbox --disable-gpu -x -f pdf --crop -b 20 -o "$out/$n.pdf" "design/$n.drawio" 2>/dev/null
+  drawio --no-sandbox --disable-gpu -x -f png -s 4 -b 20 -o "$tmp/" "design/$n.drawio" >/dev/null 2>&1 || true
+  drawio --no-sandbox --disable-gpu -x -f pdf --crop -b 20 -o "$tmp/" "design/$n.drawio" >/dev/null 2>&1 || true
+  mv "$tmp/$n.png" "$out/$n.png"
+  mv "$tmp/$n.pdf" "$out/$n.pdf"
   echo "$out/$n.{png,pdf}"
 done
