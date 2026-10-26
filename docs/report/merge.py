@@ -15,7 +15,7 @@ GEN = {
                out='shimizu_20261016', head='head_v2.md'),
     'v3': dict(parts_dir='parts3',
                parts=['guide', 'fig4a', 'fig4b', 'fig4c', 'clinical', 'crosscut', 'fig_options', 'fig5_ga',
-                      'hypothesis', 'literature', 'not_found', 'datasets_list', 'v1_dry', 'methods', 'history'],
+                      'hypothesis', 'literature', 'not_found', 'datasets_list', 'v1_dry', 'methods'],
                out='shimizu_20261026', head='head_v3.md'),
 }
 DROP = ('この資料について',)

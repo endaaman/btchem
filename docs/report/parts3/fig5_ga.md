@@ -1,31 +1,30 @@
 ---
-title: "第 7 章 Figure 5（概念図）と Graphical abstract（v1）"
+title: "第 7 章 Figure 5（概念図）と Graphical abstract の下書き"
 date: 2026-10-26
 author: 遠田
 ---
 
-v1（10/12）資料の Figure 5 / GA の章をそのまま再掲します。v2 での見直し（DEX を本編から外すと 2nd hit の根拠が「骨形成 ↓」だけになる、など）は第 6 章の「Figure 5 と GA は各案でどう変わるか」にあります。
-（「この章について」の節は v1 では PDF に載っていなかった前書きで、内容は変えていません。）
+現行の Figure 5（概念図）と Graphical abstract（GA）の下書きです。各案で Figure 5 と GA がどう変わるかは、第 6 章の「Figure 5 と GA は各案でどう変わるか」にあります。
 
 
-# この章について
+# 下書きについて
 
-Figure 5（2 段階の hit による骨転移の概念図）と Graphical abstract（GA）の下書きです。drawio で作成し、後で BioRender のイラストに差し替える前提です（今回は**位置と文言**を固めることが目的）。
+Figure 5（2 段階の hit による骨転移の概念図）と Graphical abstract（GA）の下書きです。drawio で作成し、後で BioRender のイラストに差し替える前提です（現段階では**位置と文言**を固めることが目的）。
 
 Figure 5 は 2 つの版を作りました。
 
-- **清水原案版**（`fig5_shimizu`）: ご依頼資料の文言（2nd hit = 骨細胞アポトーシス）をそのまま図にしたもの。比較のための版です。
-- **修正版**（`fig5_revised`）: Figure 4 / S1–S3 の解析結果に合わせて中身を差し替えたもの。**こちらを推します。**
+- **清水原案版**: ご依頼資料の文言（2nd hit = 骨細胞アポトーシス）をそのまま図にしたもの。比較のための版です。
+- **修正版**: Figure 4 / S1–S3 の解析結果に合わせて中身を差し替えたもの。**こちらを推します。**
 
 構図（3 カラム: 1st hit ＋ 2nd hit → pre-metastatic niche / 骨転移、右下に「臨床で介入できる / できない」の 2 箱）はどちらも同じで、ご依頼資料の案に沿っています。
 
 # 修正版（推奨）
 
-![Figure 5 修正版（`out/v1/design/fig5_revised.png`）](v1/design/fig5_revised.png){width=100%}
+![Figure 5 修正版](design/fig5_revised.png){width=100%}
 
 # 清水原案版（比較用）
 
-![Figure 5 清水原案版（`out/v1/design/fig5_shimizu.png`）](v1/design/fig5_shimizu.png){width=100%}
+![Figure 5 清水原案版](design/fig5_shimizu.png){width=100%}
 
 # 2 つの版の違い
 
@@ -38,6 +37,8 @@ Figure 5 は 2 つの版を作りました。
 | niche 〜 骨転移 | 破骨細胞活性化 → 骨吸収 → DTC 再活性化 → 骨転移 | 同じ（骨吸収で基質から増殖因子が放出される、を追記） | 文献（Ottewell 2014/2015、Lawson 2015） |
 | 臨床で介入できる | デノスマブ、BP | RANKL 阻害（デノスマブ）、BP | 同じ |
 | 介入できない | アポトーシス因子、炎症性サイトカイン（IL-6） | 炎症、老化、骨形成の抑制 | 2nd hit の中身に合わせた |
+
+（DEX のマウス脛骨で上がる炎症因子の遺伝子（*S100a9*・*Tnf*・*Mmp9* など）は、骨髄の細胞構成が好中球・単球の側に傾いた変化と読むのが正確です（第 3 章 案 2）。2nd hit の中身は、第 6 章の各案と第 3 章の結果に合わせて組み直します。）
 
 # 修正版を推す理由
 
@@ -67,9 +68,11 @@ Figure 5 は 2 つの版を作りました。
 （図中の "Data: Suppl. Fig. [ ]" は空欄のままです。上の legend の対応（S1B–E）で確定してよければ図も埋めます。
 2nd hit の Data 行は "Fig. 4B–C" としていますが、4B は「持続的な変化なし」の図なので、"Fig. 4C; Suppl. Fig. S1B, E" に絞る案もあります。）
 
+（legend の "induces inflammatory factors (Figure 4C; Supplementary Figure S1E)" も、2nd hit を組み直すときに直します。）
+
 # Graphical abstract（60 × 50 mm）
 
-![Graphical abstract 下書き（`out/v1/design/ga.png`）](v1/design/ga.png){width=60%}
+![Graphical abstract 下書き](design/ga.png){width=60%}
 
 - 左「Postmenopausal women」: KM の**模式図**（実データの曲線ではありません）と **HR 1.72（multivariable）**。
 - 中「Two-hit model」: Hit 1 = Aged bone: inflammation、Hit 2 = Chemo + steroid: RANKL/OPG ↑ → 破骨細胞活性化 → 骨転移（修正版の要約）。
@@ -78,14 +81,13 @@ Figure 5 は 2 つの版を作りました。
 注意:
 
 - **HR 1.72 は抄録の閉経後・多変量の値**です。Table 3 の確定値が出たら更新します（ご依頼資料のメモでは閉経後の p 値が変動中とのことでした）。
-  参考: Figure 3 の閉経後の**単変量** HR は 2.46（95% CI 1.37–4.40）です（`out/v1/fig/fig3_stats.csv`）。
+  参考: Figure 3 の閉経後の**単変量** HR は 2.46（95% CI 1.37–4.40）です。
 - 中央の見出し "Two-hit model" は、上の用語の結論に合わせて "Priming and trigger" などに変えます。
 - KM は Figure 3 確定後に実際の曲線の縮小版に差し替えることもできます。
 - 右の提案は、D-CARE 試験（化療と同時のデノスマブで骨転移無発生生存は改善せず）があるため、本文では「推奨」ではなく「検証すべき仮説」として書くのが安全です（文献資料を参照）。GA の文言もそれに合わせて弱めるか、ご相談させてください。
 
 # 清水先生に確認したいこと
 
-1. Figure 5 は**修正版**で進めてよいか。
-2. "two-hit" の言い換え（"sequential two-insult" / "priming-and-trigger"）をどれにするか。
-3. GA の HR を何にするか（Table 3 の閉経後多変量 HR の確定値）。
-4. GA の "Proposal" の書き方（D-CARE を踏まえて、"hypothesis" 寄りの表現にするか）。
+1. Figure 5 は修正版の方向（2nd hit を骨細胞アポトーシスから、データで出た変化に置き換える）で進めてよいか。2nd hit の中身は第 6 章の確認とあわせて決めます。
+2. GA の HR を何にするか（Table 3 の閉経後多変量 HR の確定値）。
+3. GA の "Proposal" の書き方（D-CARE を踏まえて、"hypothesis" 寄りの表現にするか）。
