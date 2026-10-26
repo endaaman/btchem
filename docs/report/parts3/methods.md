@@ -104,7 +104,6 @@ FDR は解析に含めたセットの数で変わるので、Hallmark 50 セッ�
 データ（`data/seq/`）:
 - `GSE235942/`: `GSE235942_raw_counts.txt.gz`、`GSE235942_family.soft.gz`、`counts.tsv.gz`、`samples.csv`
 - `GSE255653/`: `GSE255653_FPKM_Subseries_4.txt.gz`、`GSE255653_family.soft.gz`、`DEE2_mmusculus_GeneInfo.tsv.gz`（DEE2 の遺伝子長）、`MRK_ENSEMBL.rpt.gz`（MGI のシンボル → Ensembl）、`counts.tsv.gz`（復元）、`samples.csv`
-- GSE23592 は落としていない（ニワトリのデータで無関係）。
 
 結果（`out/prelim/aging2/`）:
 - `de/<label>.csv`、`de/de_summary.csv`、`deg_counts.csv`
