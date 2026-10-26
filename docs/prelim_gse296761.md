@@ -1,4 +1,4 @@
-# Figure 4B: ドキソルビシン — Blood 2026（PMID 42008378, GEO GSE296761）の再解析（2026-10-26, v4）
+# Figure 4B: ドキソルビシン — Blood 2026（PMID 42008378, GEO GSE296761）の再解析（2026-10-26, v3）
 
 清水先生の 10/14 依頼「【Figure4B：ドキソルビシン】2026 年 9 月に Blood に掲載されたものを活用しましょう」への回答。
 前提: `docs/prelim_chemo.md`（GSE296758 の DE）、`docs/prelim_chemo2.md`（同じ gene set での並置）、v2 資料 `docs/report/shimizu_20261016.md`。
